@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import getUserName from '../src/cli.js';
+
 console.log('Welcome to the Brain Games');
-import getUserName from '/home/mfadeev/alina/hexlet-js/frontend-project-lvl1/src/cli.js';
 getUserName();
