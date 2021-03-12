@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const userName = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${userName}`);
 
 const letsPlay = () => {
   let i = 1;
@@ -9,29 +10,29 @@ const letsPlay = () => {
     console.log(`Question: ${number}`);
     const input = readlineSync.prompt();
     console.log(`Your answer: ${input}`);
-    if (number % 2 === 0 && input === 'Yes') {
+    if (number % 2 === 0 && input === 'yes') {
       console.log('Correct!');
     }
-    if (number % 2 !== 0 && input === 'No') {
+    if (number % 2 !== 0 && input === 'no') {
       console.log('Correct!');
     }
-    if (number % 2 === 0 && input === 'No') {
-      console.log("'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, userName!");
+    if (number % 2 === 0 && input === 'no') {
+      console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${userName}!`);
       break;
     }
-    if (number % 2 !== 0 && input === 'Yes') {
-      console.log("'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, userName!");
+    if (number % 2 !== 0 && input === 'yes') {
+      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`);
       break;
     }
-    if (input !== 'Yes' && input !== 'No') {
-      console.log(`${input} is wrong answer ;(. Let's try again, userName!`);
+    if (input !== 'yes' && input !== 'no') {
+      console.log(`${input} is wrong answer ;(. Let's try again, ${userName}!`);
       break;
     }
     i += 1;
   }
   if (i === 4) {
-    console.log('Congratulations, userName!');
+    console.log(`Congratulations, ${userName}!`);
   }
 };
-
 letsPlay();
+export default letsPlay;
