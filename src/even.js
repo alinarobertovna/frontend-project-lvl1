@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}`);
-
 const letsPlay = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let i = 1;
   while (i <= 3) {
     const number = Math.round(Math.random() * 1000);
@@ -34,5 +34,4 @@ const letsPlay = () => {
     console.log(`Congratulations, ${userName}!`);
   }
 };
-letsPlay();
 export default letsPlay;
