@@ -1,9 +1,13 @@
 import readlineSync from 'readline-sync';
 
+const greeting = 'Welcome to the Brain Games!';
+const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const letsPlay = () => {
+  console.log(greeting);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(condition);
   let i = 1;
   while (i <= 3) {
     const number = Math.round(Math.random() * 1000);
