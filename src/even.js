@@ -21,15 +21,15 @@ const letsPlay = () => {
       console.log('Correct!');
     }
     if (number % 2 === 0 && input === 'no') {
-      console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${userName}!`);
+      console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. \n Let's try again, ${userName}!`);
       break;
     }
     if (number % 2 !== 0 && input === 'yes') {
-      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`);
+      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. \n Let's try again, ${userName}!`);
       break;
     }
     if (input !== 'yes' && input !== 'no') {
-      console.log(`${input} is wrong answer ;(. Let's try again, ${userName}!`);
+      console.log(`${input} is wrong answer ;(. \n Let's try again, ${userName}!`);
       break;
     }
     i += 1;
