@@ -1,12 +1,11 @@
 import readlineSync from 'readline-sync';
+import { welcoming, greeting } from '../src/index.js';
 
-const greeting = 'Welcome to the Brain Games!';
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const letsPlay = () => {
-  console.log(greeting);
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  console.log(welcoming);
+  const userName = greeting();
   console.log(condition);
   let i = 1;
   while (i <= 3) {

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
+import { welcoming, greeting } from '../src/index.js';
 
-const greeting = 'Welcome to the Brain Games!';
 const condition = 'What is the result of the expression?';
 const attemptNumber = 3;
 
@@ -15,20 +15,16 @@ const calculateExpression = (a, b, sign) => {
     case '-':
       expression = a - b;
       break;
-    case '*':
-      expression = a * b;
-      break;
     default:
-      expression = 'undefined';
+      expression = a * b;
       break;
   }
   return expression;
 };
 
 const letsCalc = () => {
-  console.log(greeting);
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  console.log(welcoming);
+  const userName = greeting();
   console.log(condition);
   let i = 1;
   while (i <= attemptNumber) {
