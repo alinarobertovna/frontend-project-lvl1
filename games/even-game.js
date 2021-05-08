@@ -1,10 +1,9 @@
 import readlineSync from 'readline-sync';
-import { welcoming, greeting } from '../src/index.js';
+import greeting from '../src/index.js';
 
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const letsPlay = () => {
-  console.log(welcoming);
   const userName = greeting();
   console.log(condition);
   let i = 1;

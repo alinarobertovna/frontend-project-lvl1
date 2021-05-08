@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { welcoming, greeting } from '../src/index.js';
+import greeting from '../src/index.js';
 
 const condition = 'What is the result of the expression?';
 const attemptNumber = 3;
@@ -23,7 +23,6 @@ const calculateExpression = (a, b, sign) => {
 };
 
 const letsCalc = () => {
-  console.log(welcoming);
   const userName = greeting();
   console.log(condition);
   let i = 1;
