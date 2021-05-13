@@ -1,39 +1,21 @@
-import readlineSync from 'readline-sync';
-import greeting from '../src/index.js';
+import gameEngine from '../src/index.js';
 
-const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const letsPlay = () => {
-  const userName = greeting();
-  console.log(condition);
-  let i = 1;
-  while (i <= 3) {
-    const number = Math.round(Math.random() * 1000);
-    console.log(`Question: ${number}`);
-    const input = readlineSync.prompt();
-    console.log(`Your answer: ${input}`);
-    if (number % 2 === 0 && input === 'yes') {
-      console.log('Correct!');
-    }
-    if (number % 2 !== 0 && input === 'no') {
-      console.log('Correct!');
-    }
-    if (number % 2 === 0 && input === 'no') {
-      console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. \n Let's try again, ${userName}!`);
-      break;
-    }
-    if (number % 2 !== 0 && input === 'yes') {
-      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. \n Let's try again, ${userName}!`);
-      break;
-    }
-    if (input !== 'yes' && input !== 'no') {
-      console.log(`${input} is wrong answer ;(. \n Let's try again, ${userName}!`);
-      break;
-    }
-    i += 1;
+const generateGameData = () => {
+  const gameData = [];
+  const question = Math.round(Math.random() * 1000);
+  let correctAnswer = ' ';
+  if (question % 2 === 0) {
+    correctAnswer = 'yes';
+  } else if (question % 2 !== 0) {
+    correctAnswer = 'no';
   }
-  if (i === 4) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  gameData.push(question, correctAnswer);
+  return gameData;
 };
-export default letsPlay;
+
+const evenGame = () => {
+  gameEngine(task, generateGameData);
+};
+export default evenGame;

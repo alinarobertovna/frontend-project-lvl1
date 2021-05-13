@@ -1,9 +1,6 @@
-import readlineSync from 'readline-sync';
-import greeting from '../src/index.js';
+import gameEngine from '../src/index.js';
 
-const condition = 'What is the result of the expression?';
-const attemptNumber = 3;
-
+const task = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const calculateExpression = (a, b, sign) => {
@@ -22,30 +19,20 @@ const calculateExpression = (a, b, sign) => {
   return expression;
 };
 
+const generateGameData = () => {
+  const gameData = [];
+  const firstNum = Math.round(Math.random() * 1000);
+  const secondNum = Math.round(Math.random() * 1000);
+  const randomSign = Math.floor(Math.random() * operators.length);
+  const operator = operators[randomSign];
+  const question = `${firstNum} ${operator} ${secondNum}`;
+  const calculatedAnswer = calculateExpression(firstNum, secondNum, operator);
+  const correctAnswer = calculatedAnswer.toString();
+  gameData.push(question, correctAnswer);
+  return gameData;
+};
+
 const letsCalc = () => {
-  const userName = greeting();
-  console.log(condition);
-  let i = 1;
-  while (i <= attemptNumber) {
-    const firstNumber = Math.round(Math.random() * 1000);
-    const secondNumber = Math.round(Math.random() * 1000);
-    const randomSign = Math.floor(Math.random() * operators.length);
-    const operator = operators[randomSign];
-    const expression = `${firstNumber}${operator}${secondNumber}`;
-    const correctAnswer = calculateExpression(firstNumber, secondNumber, operator);
-    console.log(`Question: ${expression}`);
-    const input = readlineSync.prompt();
-    console.log(`Your answer: ${input}`);
-    if (Number(input) === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${input} is wrong answer ;(. Correct answer was ${correctAnswer}. \n Let's try again, ${userName}!`);
-      break;
-    }
-    i += 1;
-  }
-  if (i === 4) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  gameEngine(task, generateGameData);
 };
 export default letsCalc;

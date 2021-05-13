@@ -7,4 +7,23 @@ const greeting = () => {
   return userName;
 };
 
-export default greeting;
+const gameEngine = (task, generateGameData) => {
+  const userName = greeting();
+  console.log(task);
+  for (let i = 0; i < 3; i += 1) {
+    const [question, correctAnswer] = generateGameData();
+    console.log(`Question: ${question}`);
+    const input = readlineSync.prompt();
+    console.log(`Your answer: ${input}`);
+    if (input === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`${input} is wrong answer ;(. Correct answer was ${correctAnswer}. \n Let's try again, ${userName}!`);
+      break;
+    }
+    if (i === 2) {
+      console.log(`Congratulations, ${userName}!`);
+    }
+  }
+};
+export default gameEngine;
