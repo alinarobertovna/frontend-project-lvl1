@@ -8,3 +8,6 @@ Brain-Even
 
 Brain-Calc
 <a href="https://asciinema.org/a/0JMP8DL5ey4pxHHcyXaxCcG7y" target="_blank"><img src="https://asciinema.org/a/0JMP8DL5ey4pxHHcyXaxCcG7y.svg" /></a>
+
+Brain-Gcd
+<a href="https://asciinema.org/a/FthMW082SzZWHny3EdKST0Jtn" target="_blank"><img src="https://asciinema.org/a/FthMW082SzZWHny3EdKST0Jtn.svg" /></a>
