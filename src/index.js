@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const attemptNumber = 3;
+
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -10,7 +12,7 @@ const greeting = () => {
 const gameEngine = (task, generateGameData) => {
   const userName = greeting();
   console.log(task);
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < attemptNumber; i += 1) {
     const [question, correctAnswer] = generateGameData();
     console.log(`Question: ${question}`);
     const input = readlineSync.prompt();
