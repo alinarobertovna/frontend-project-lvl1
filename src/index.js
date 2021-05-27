@@ -9,7 +9,7 @@ const greeting = () => {
   return userName;
 };
 
-const gameEngine = (task, generateGameData) => {
+const launchGame = (task, generateGameData) => {
   const userName = greeting();
   console.log(task);
   for (let i = 0; i < attemptNumber; i += 1) {
@@ -21,11 +21,9 @@ const gameEngine = (task, generateGameData) => {
       console.log('Correct!');
     } else {
       console.log(`${input} is wrong answer ;(. Correct answer was ${correctAnswer}. \n Let's try again, ${userName}!`);
-      break;
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}!`);
+      return;
     }
   }
+  console.log(`Congratulations, ${userName}!`);
 };
-export default gameEngine;
+export default launchGame;

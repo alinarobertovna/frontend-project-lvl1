@@ -1,4 +1,4 @@
-import gameEngine from '../src/index.js';
+import launchGame from '../index.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -15,7 +15,6 @@ const generateGameData = () => {
   return gameData;
 };
 
-const evenGame = () => {
-  gameEngine(task, generateGameData);
+export default () => {
+  launchGame(task, generateGameData);
 };
-export default evenGame;

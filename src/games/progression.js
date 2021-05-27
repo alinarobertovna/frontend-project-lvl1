@@ -1,4 +1,4 @@
-import gameEngine from '../src/index.js';
+import launchGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
@@ -47,7 +47,6 @@ const generateGameData = () => {
   return gameData;
 };
 
-const findMissingItem = () => {
-  gameEngine(task, generateGameData);
+export default () => {
+  launchGame(task, generateGameData);
 };
-export default findMissingItem;

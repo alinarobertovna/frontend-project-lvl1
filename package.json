@@ -2,8 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/alinarobertovna/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/alinarobertovna/frontend-project-lvl1/actions)",
-  "main": "index.js",
+  "description": "Five mini games that can be played via terminal",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

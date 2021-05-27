@@ -1,4 +1,4 @@
-import gameEngine from '../src/index.js';
+import launchGame from '../index.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -26,7 +26,6 @@ const generateGameData = () => {
   return gameData;
 };
 
-const primeGame = () => {
-  gameEngine(task, generateGameData);
+export default () => {
+  launchGame(task, generateGameData);
 };
-export default primeGame;

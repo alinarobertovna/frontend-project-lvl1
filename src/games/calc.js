@@ -1,22 +1,17 @@
-import gameEngine from '../src/index.js';
+import launchGame from '../index.js';
 
 const task = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const calculateExpression = (a, b, sign) => {
-  let expression;
   switch (sign) {
     case '+':
-      expression = a + b;
-      break;
+      return a + b;
     case '-':
-      expression = a - b;
-      break;
+      return a - b;
     default:
-      expression = a * b;
-      break;
+      return a * b;
   }
-  return expression;
 };
 
 const generateGameData = () => {
@@ -32,7 +27,6 @@ const generateGameData = () => {
   return gameData;
 };
 
-const letsCalc = () => {
-  gameEngine(task, generateGameData);
+export default () => {
+  launchGame(task, generateGameData);
 };
-export default letsCalc;

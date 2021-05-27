@@ -1,4 +1,4 @@
-import gameEngine from '../src/index.js';
+import launchGame from '../index.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
@@ -34,7 +34,6 @@ const generateGameData = () => {
   return gameData;
 };
 
-const findGcd = () => {
-  gameEngine(task, generateGameData);
+export default () => {
+  launchGame(task, generateGameData);
 };
-export default findGcd;
