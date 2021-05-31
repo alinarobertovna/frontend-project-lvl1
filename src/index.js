@@ -2,13 +2,13 @@ import readlineSync from 'readline-sync';
 
 export const generateRandomNumber = () => Math.round(Math.random() * 1000);
 
-const attemptNumber = 3;
-const greeting = () => {
+export const greeting = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
 };
+const attemptNumber = 3;
 
 export const launchGame = (task, generateGameData) => {
   const userName = greeting();
