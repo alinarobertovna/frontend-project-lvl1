@@ -1,18 +1,18 @@
-import launchGame from '../index.js';
+import { launchGame, generateRandomNumber } from '../index.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateGameData = () => {
-  const gameData = [];
-  const question = Math.round(Math.random() * 1000);
-  let correctAnswer = ' ';
-  if (question % 2 === 0) {
-    correctAnswer = 'yes';
-  } else if (question % 2 !== 0) {
-    correctAnswer = 'no';
+const isEven = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
   }
-  gameData.push(question, correctAnswer);
-  return gameData;
+  return 'no';
+};
+
+const generateGameData = () => {
+  const question = generateRandomNumber();
+  const correctAnswer = isEven(question);
+  return [question, correctAnswer];
 };
 
 export default () => {

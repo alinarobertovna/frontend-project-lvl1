@@ -1,10 +1,10 @@
-import launchGame from '../index.js';
+import { launchGame, generateRandomNumber } from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
 const makeProgression = () => {
   const progression = [];
-  const firstNum = Math.round(Math.random() * 1000);
+  const firstNum = generateRandomNumber();
   const progressionStep = Math.round(Math.random() * 100);
   for (let i = firstNum; progression.length < 10; i += progressionStep) {
     progression.push(i);
@@ -39,12 +39,10 @@ const getCorrectAnswer = (array) => {
 };
 
 const generateGameData = () => {
-  const gameData = [];
   const progression = hideFigure();
   const question = progression.join(' ');
   const correctAnswer = getCorrectAnswer(progression);
-  gameData.push(question, correctAnswer);
-  return gameData;
+  return [question, correctAnswer];
 };
 
 export default () => {
