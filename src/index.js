@@ -8,6 +8,7 @@ export const greeting = () => {
   console.log(`Hello, ${userName}!`);
   return userName;
 };
+
 const attemptNumber = 3;
 
 export const launchGame = (task, generateGameData) => {
