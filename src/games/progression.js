@@ -1,4 +1,5 @@
-import { launchGame, generateRandomNumber } from '../index.js';
+import launchGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const task = 'What number is missing in the progression?';
 
@@ -17,10 +18,10 @@ const hideFigure = (progression, randomFigure) => {
 };
 
 const generateGameData = () => {
-  const firstNum = generateRandomNumber();
-  const progressionStep = Math.round(Math.random() * 100);
+  const firstNum = generateRandomNumber(0, 1000);
+  const progressionStep = generateRandomNumber(0, 100);
   const progression = makeProgression(firstNum, progressionStep);
-  const randomFigure = Math.floor(Math.random() * progression.length);
+  const randomFigure = generateRandomNumber(0, progression.length);
   const correctAnswer = progression[randomFigure].toString();
   const newQuestion = hideFigure(progression, randomFigure);
   const question = newQuestion.join(' ');

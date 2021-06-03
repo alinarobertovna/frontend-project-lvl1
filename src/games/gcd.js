@@ -1,4 +1,5 @@
-import { launchGame, generateRandomNumber } from '../index.js';
+import launchGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
@@ -24,8 +25,8 @@ const findBiggestCommonDivisor = (a, b) => {
 };
 
 const generateGameData = () => {
-  const firstNum = generateRandomNumber();
-  const secondNum = generateRandomNumber();
+  const firstNum = generateRandomNumber(0, 1000);
+  const secondNum = generateRandomNumber(0, 1000);
   const question = `${firstNum} ${secondNum}`;
   const calculatedAnswer = findBiggestCommonDivisor(firstNum, secondNum);
   const correctAnswer = calculatedAnswer.toString();

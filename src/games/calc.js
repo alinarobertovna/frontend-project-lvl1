@@ -1,4 +1,5 @@
-import { launchGame, generateRandomNumber } from '../index.js';
+import launchGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const task = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -15,9 +16,9 @@ const calculateExpression = (a, b, sign) => {
 };
 
 const generateGameData = () => {
-  const firstNum = generateRandomNumber();
-  const secondNum = generateRandomNumber();
-  const randomSign = Math.floor(Math.random() * operators.length);
+  const firstNum = generateRandomNumber(0, 1000);
+  const secondNum = generateRandomNumber(0, 1000);
+  const randomSign = generateRandomNumber(0, operators.length);
   const operator = operators[randomSign];
   const question = `${firstNum} ${operator} ${secondNum}`;
   const calculatedAnswer = calculateExpression(firstNum, secondNum, operator);
