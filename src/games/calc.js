@@ -1,7 +1,7 @@
 import launchGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const task = 'What is the result of the expression?';
+const gameTask = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const calculateExpression = (a, b, sign) => {
@@ -10,8 +10,10 @@ const calculateExpression = (a, b, sign) => {
       return a + b;
     case '-':
       return a - b;
-    default:
+    case '*':
       return a * b;
+    default:
+      return undefined;
   }
 };
 
@@ -27,5 +29,5 @@ const generateGameData = () => {
 };
 
 export default () => {
-  launchGame(task, generateGameData);
+  launchGame(gameTask, generateGameData);
 };

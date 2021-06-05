@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { greeting } from '../src/index.js';
+import { getUserName } from '../src/index.js';
 
-greeting();
+getUserName();

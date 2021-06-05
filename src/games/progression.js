@@ -1,33 +1,33 @@
 import launchGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const task = 'What number is missing in the progression?';
+const gameTask = 'What number is missing in the progression?';
 
-const makeProgression = (firstNum, progressionStep) => {
+const makeProgression = (firstNum, progressionStep, progressionLength) => {
   const progression = [];
-  for (let i = firstNum; progression.length < 10; i += progressionStep) {
+  for (let i = firstNum; progression.length < progressionLength; i += progressionStep) {
     progression.push(i);
   }
   return progression;
 };
 
-const hideFigure = (progression, randomFigure) => {
+const hideItem = (progression, randomItem) => {
   const updatedProgression = progression;
-  updatedProgression[randomFigure] = '..';
+  updatedProgression[randomItem] = '..';
   return updatedProgression;
 };
 
 const generateGameData = () => {
   const firstNum = generateRandomNumber(0, 1000);
   const progressionStep = generateRandomNumber(0, 100);
-  const progression = makeProgression(firstNum, progressionStep);
+  const progressionLength = generateRandomNumber(5, 11);
+  const progression = makeProgression(firstNum, progressionStep, progressionLength);
   const randomFigure = generateRandomNumber(0, progression.length);
   const correctAnswer = progression[randomFigure].toString();
-  const newQuestion = hideFigure(progression, randomFigure);
-  const question = newQuestion.join(' ');
+  const question = hideItem(progression, randomFigure).join(' ');
   return [question, correctAnswer];
 };
 
 export default () => {
-  launchGame(task, generateGameData);
+  launchGame(gameTask, generateGameData);
 };
