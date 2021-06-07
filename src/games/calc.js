@@ -13,7 +13,7 @@ const calculateExpression = (a, b, sign) => {
     case '*':
       return a * b;
     default:
-      return undefined;
+      throw new Error(`Unknown state:'${sign}'!`);
   }
 };
 
