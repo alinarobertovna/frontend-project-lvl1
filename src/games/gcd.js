@@ -1,7 +1,7 @@
 import launchGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const gameTask = 'Find the greatest common divisor of given numbers.';
+const currentGameDescription = 'Find the greatest common divisor of given numbers.';
 
 const findBiggestCommonDivisor = (a, b) => {
   if (a === 1 || b === 1) {
@@ -18,7 +18,7 @@ const findBiggestCommonDivisor = (a, b) => {
   for (let i = a; i > 0; i -= 1) {
     if (a % i === 0 && b % i === 0) {
       biggestDivisor = i;
-      break;
+      return biggestDivisor;
     }
   }
   return biggestDivisor;
@@ -34,5 +34,5 @@ const generateGameData = () => {
 };
 
 export default () => {
-  launchGame(gameTask, generateGameData);
+  launchGame(currentGameDescription, generateGameData);
 };

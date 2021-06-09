@@ -1,7 +1,7 @@
 import launchGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const gameTask = 'What number is missing in the progression?';
+const currentGameDescription = 'What number is missing in the progression?';
 
 const makeProgression = (firstNum, progressionStep, progressionLength) => {
   const progression = [];
@@ -22,12 +22,12 @@ const generateGameData = () => {
   const progressionStep = generateRandomNumber(0, 100);
   const progressionLength = generateRandomNumber(5, 11);
   const progression = makeProgression(firstNum, progressionStep, progressionLength);
-  const randomFigure = generateRandomNumber(0, progression.length);
-  const correctAnswer = progression[randomFigure].toString();
-  const question = hideItem(progression, randomFigure).join(' ');
+  const randomItem = generateRandomNumber(0, (progression.length - 1));
+  const correctAnswer = progression[randomItem].toString();
+  const question = hideItem(progression, randomItem).join(' ');
   return [question, correctAnswer];
 };
 
 export default () => {
-  launchGame(gameTask, generateGameData);
+  launchGame(currentGameDescription, generateGameData);
 };
